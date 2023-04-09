@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="WaifuMessage" style="flex-direction: row;">
+        <ui:Label text="Waifu:" display-tooltip-when-elided="true" name="MessageTitle" />
+        <ui:VisualElement style="background-color: rgb(231, 111, 0); margin-left: 6px; margin-right: 6px; margin-top: 0; margin-bottom: 6px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+            <ui:Label text="Hello World!" display-tooltip-when-elided="true" name="ChatText" style="padding-left: 6px; padding-top: 4px; padding-bottom: 4px; padding-right: 4px; background-image: none; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 6px; border-bottom-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; border-left-color: rgb(255, 78, 0); border-right-color: rgb(255, 78, 0); border-top-color: rgb(255, 78, 0); border-bottom-color: rgb(255, 78, 0); white-space: normal;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

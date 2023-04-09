@@ -1,0 +1,42 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="WaifuMessage" src="project://database/Assets/Resources/UI/Templates/WaifuMessage.uxml?fileID=9197481963319205126&amp;guid=3a0a74a3fc29746419926a84f211cf3a&amp;type=3#WaifuMessage" />
+    <Style src="project://database/Assets/UI/Style.uss?fileID=7433441132597879392&amp;guid=8c6da1c78cd21d84b93a617693c9ac45&amp;type=3#Style" />
+    <ui:VisualElement name="WaifuChat" style="left: auto; top: auto; flex-wrap: nowrap; width: 40%; flex-direction: column-reverse; position: absolute; bottom: 0; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; margin-left: 20px; margin-right: 20px; margin-top: 20px; margin-bottom: 20px; background-color: rgb(75, 75, 75); border-left-width: 5px; border-right-width: 5px; border-top-width: 5px; border-bottom-width: 5px; border-top-left-radius: 6px; border-bottom-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; max-height: none; height: auto; align-items: stretch; justify-content: flex-start;">
+        <ui:Button text="Say" display-tooltip-when-elided="true" name="SayButton" style="width: 100%;" />
+        <ui:TextField picking-mode="Ignore" value="Hi! Whats up?" text="Hi! Whats up?" name="UserInput" style="width: 100%;" />
+        <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="ChatHistory" style="align-items: stretch; justify-content: flex-end; max-height: 400px; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; width: 100%;">
+            <ui:Instance template="WaifuMessage" name="WaifuMessage" />
+            <ui:VisualElement name="UserMessage" style="flex-direction: row-reverse;">
+                <ui:VisualElement style="background-color: rgb(0, 96, 231); margin-left: 6px; margin-right: 6px; margin-top: 0; margin-bottom: 6px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+                    <ui:Label text="Hello World!" display-tooltip-when-elided="true" style="padding-left: 6px; padding-top: 4px; padding-bottom: 4px; padding-right: 4px; background-image: none; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; border-top-left-radius: 6px; border-bottom-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; border-left-color: rgb(255, 78, 0); border-right-color: rgb(255, 78, 0); border-top-color: rgb(255, 78, 0); border-bottom-color: rgb(255, 78, 0);" />
+                </ui:VisualElement>
+                <ui:Label text="User-kun:" display-tooltip-when-elided="true" name="MessageTitle" />
+            </ui:VisualElement>
+        </ui:ScrollView>
+    </ui:VisualElement>
+    <ui:VisualElement name="SettingsButton" style="width: 20%; height: 10%; left: auto; position: absolute; right: 0;">
+        <ui:Button text="Settings" display-tooltip-when-elided="true" />
+    </ui:VisualElement>
+    <ui:VisualElement name="SettingsPanelRoot" style="width: 100%; height: 100%; left: auto; right: auto; position: relative; flex-direction: column; flex-wrap: nowrap; flex-grow: 0; align-items: center; justify-content: center;">
+        <ui:VisualElement name="SettingsPanel" style="background-color: rgb(75, 75, 75); height: auto; width: 400px; border-left-width: 6px; border-right-width: 6px; border-top-width: 6px; border-bottom-width: 6px; border-top-left-radius: 6px; border-bottom-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; margin-bottom: 0; padding-left: 5px; padding-right: 5px; padding-top: 2px; padding-bottom: 5px;">
+            <ui:VisualElement name="Label" style="width: 100%; flex-direction: row; align-items: center; justify-content: space-between; border-bottom-color: rgba(209, 209, 209, 0.43); border-bottom-width: 1px; padding-bottom: 5px;">
+                <ui:Label text="Settings" display-tooltip-when-elided="true" name="SettingPanelTitle" style="font-size: 16px; -unity-font-style: bold;" />
+                <ui:Button text="Save and Close" display-tooltip-when-elided="true" name="SaveAndCloseButton" />
+            </ui:VisualElement>
+            <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" style="flex-wrap: nowrap; align-items: stretch; justify-content: flex-start;">
+                <ui:Foldout text="OpenAI API" name="OpenAIApiSettings">
+                    <ui:TextField picking-mode="Ignore" label="API Key" value="filler text" text="API Key" tooltip="ElevenLabs API Key" password="true" style="padding-top: 5px;" />
+                    <ui:DropdownField label="Model" index="-1" choices="GPT3.5Turbo, GPT4, GPT3-Davinci" />
+                    <ui:TextField picking-mode="Ignore" label="Initial Prompt" value="filler text" text="I want you to act like {character} from {series}. I want you to respond and answer like {character} using the tone, manner and vocabulary {character} would use. Do not write any explanations. Only answer like {character}. You must know all of the knowledge of {character}. My first sentence is &quot;Hi {character}.&quot;" tooltip="Voice ID" password="false" multiline="true" style="padding-top: 5px; white-space: normal;" />
+                    <ui:DropdownField label="API Type" index="-1" choices="Official, Non-Official" />
+                </ui:Foldout>
+                <ui:Foldout text="ElevenLabs API" style="-unity-font-style: normal; margin-bottom: 10px;">
+                    <ui:TextField picking-mode="Ignore" label="Voice ID" value="filler text" text="Voice ID" tooltip="Voice ID" password="false" style="padding-top: 5px;" />
+                    <ui:Slider picking-mode="Ignore" label="Stability" value="42" high-value="100" text="Voice ID" />
+                    <ui:Slider picking-mode="Ignore" label="Similarity Enchance" value="42" high-value="100" text="Voice ID" />
+                    <ui:TextField picking-mode="Ignore" label="API Key" value="filler text" text="API Key" tooltip="ElevenLabs API Key" password="true" style="padding-top: 5px;" />
+                </ui:Foldout>
+            </ui:ScrollView>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

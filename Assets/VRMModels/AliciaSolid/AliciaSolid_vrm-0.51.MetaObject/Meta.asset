@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b589176a34b344b9ccbee2b7e7114a, type: 3}
+  m_Name: Meta
+  m_EditorClassIdentifier: 
+  ExporterVersion: UniVRM-0.51.0
+  Title: Alicia Solid
+  Version: 1.10
+  Author: "\xA9 DWANGO Co., Ltd."
+  ContactInformation: https://3d.nicovideo.jp/alicia/
+  Reference: 
+  Thumbnail: {fileID: 2800000, guid: 82f3cde6be1f1ee4a8105a7b8ceba23d, type: 3}
+  AllowedUser: 2
+  ViolentUssage: 0
+  SexualUssage: 0
+  CommercialUssage: 1
+  OtherPermissionUrl: https://3d.nicovideo.jp/alicia/rule.html
+  LicenseType: 8
+  OtherLicenseUrl: https://3d.nicovideo.jp/alicia/rule.html

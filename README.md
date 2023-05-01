@@ -1,4 +1,7 @@
 <h1 align="center">
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
     <span>UniAI - All-In-One Virtual Assistant</span>
 </h1>
 
@@ -39,6 +42,19 @@ The long-term goal is to create an easy-to-use platform that supports as many AI
 ## Contributors ✨
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.youtube.com/channel/UCdRTXLQuwCEgO7uatgilk_Q"><img src="https://avatars.githubusercontent.com/u/84594878?v=4?s=100" width="100px;" alt="Zmiennys"/><br /><sub><b>Zmiennys</b></sub></a><br /><a href="https://github.com/ZmiennyVT/UniAI/commits?author=ZmiennyVT" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 <!-- markdownlint-disable -->
 
 <!-- markdownlint-restore -->

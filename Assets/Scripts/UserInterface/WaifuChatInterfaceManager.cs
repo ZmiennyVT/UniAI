@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,8 @@ public class WaifuChatInterfaceManager : MonoBehaviour
     VisualElement root;
     ScrollView waifuChatHistory;
 
-    public LLMInterface llmInterface;
+
+
     public struct ChatElement
     {
         public bool fromUser;
@@ -44,11 +46,65 @@ public class WaifuChatInterfaceManager : MonoBehaviour
         VisualElement userChatElement = root.Q<VisualElement>("UserMessage");
 
         Button sayButton = root.Q<Button>("SayButton");
-        sayButton.clicked += () => { 
-            llmInterface.SendToLLM(root.Q<TextField>("UserInput").text);
+        sayButton.clicked += () => {
+            string llmInpuText = root.Q<TextField>("UserInput").text;
+            AppManager.instance.SendLLMRequest(llmInpuText);
+            AddMessage(llmInpuText, true);
+            ClearUserInputField();
         };
 
-        waifuChatHistory.Clear();
+        waifuChatHistory.Clear(); 
+
+
+        root.Q<Button>("SettingsToggle").clicked += () => {
+            SetSettingsVisibility(!root.Q<VisualElement>("SettingsPanelRoot").visible);
+        }; 
+        root.Q<Button>("SettingsSaveAndCloseButton").clicked += () => {
+            SaveSettings();
+            SetSettingsVisibility(false);
+            if(!APIManager.instance.SaveAPIData()) Debug.LogError("Failed to save API data!");
+            AppManager.instance.UpdateAPISettings();
+        };
+    }
+
+    public void ClearUserInputField()
+    {
+        root.Q<TextField>("UserInput").value = "";
+    }
+
+    public void SetSettingsVisibility(bool visible)
+    {
+        root.Q<VisualElement>("SettingsPanelRoot").visible = visible;
+    }
+
+    public void SaveSettings()
+    {
+        root = GetComponent<UIDocument>().rootVisualElement;
+        APIManager.APIData apiData = new APIManager.APIData();
+        apiData.openAIAPIKey = root.Q<TextField>("OpenAIApiKey").text;
+        apiData.openAIModel = root.Q<DropdownField>("OpenAIModelDropdown").text;
+        apiData.openAIInitialPrompt = root.Q<TextField>("OpenAIInitialPrompt").text;
+        apiData.APIType = root.Q<DropdownField>("OpenAIApiType").text;
+        apiData.elevenLabsAPIKey = root.Q<TextField>("ElevenLabsAPIKey").text;
+        apiData.elevenLabsVoiceID = root.Q<TextField>("ElevenLabsVoiceID").text;
+        apiData.elevenLabsStability = (float)root.Q<Slider>("ElevenLabsStabilitySlider").value/100f;
+        apiData.elevenLabsSimilarity = (float)root.Q<Slider>("ElevenLabsSimilaritySlider").value / 100f;
+        APIManager.instance.apiData = apiData;
+
+    }
+
+    public void UpdateSettingsView(APIManager.APIData apiData)
+    {
+        root = GetComponent<UIDocument>().rootVisualElement;
+
+        root.Q<TextField>("OpenAIApiKey").value = apiData.openAIAPIKey;
+        root.Q<DropdownField>("OpenAIModelDropdown").value = apiData.openAIModel;
+        root.Q<TextField>("OpenAIInitialPrompt").value = apiData.openAIInitialPrompt;
+        root.Q<DropdownField>("OpenAIApiType").value = apiData.APIType;
+        root.Q<TextField>("ElevenLabsAPIKey").value = apiData.elevenLabsAPIKey;
+        root.Q<TextField>("ElevenLabsVoiceID").value = apiData.elevenLabsVoiceID;
+        root.Q<Slider>("ElevenLabsStabilitySlider").value = apiData.elevenLabsStability*100f;
+        root.Q<Slider>("ElevenLabsSimilaritySlider").value = apiData.elevenLabsSimilarity*100f;
     }
 
     public void AddMessage(string message, bool isFromUser)

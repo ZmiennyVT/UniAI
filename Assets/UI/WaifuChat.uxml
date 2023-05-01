@@ -15,26 +15,26 @@
         </ui:ScrollView>
     </ui:VisualElement>
     <ui:VisualElement name="SettingsButton" style="width: 20%; height: 10%; left: auto; position: absolute; right: 0;">
-        <ui:Button text="Settings" display-tooltip-when-elided="true" />
+        <ui:Button text="Settings" display-tooltip-when-elided="true" name="SettingsToggle" />
     </ui:VisualElement>
-    <ui:VisualElement name="SettingsPanelRoot" style="width: 100%; height: 100%; left: auto; right: auto; position: relative; flex-direction: column; flex-wrap: nowrap; flex-grow: 0; align-items: center; justify-content: center;">
-        <ui:VisualElement name="SettingsPanel" style="background-color: rgb(75, 75, 75); height: auto; width: 400px; border-left-width: 6px; border-right-width: 6px; border-top-width: 6px; border-bottom-width: 6px; border-top-left-radius: 6px; border-bottom-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; margin-bottom: 0; padding-left: 5px; padding-right: 5px; padding-top: 2px; padding-bottom: 5px;">
+    <ui:VisualElement name="SettingsPanelRoot" picking-mode="Ignore" style="width: 100%; height: 100%; left: auto; right: auto; position: relative; flex-direction: column; flex-wrap: nowrap; flex-grow: 0; align-items: center; justify-content: space-around; display: flex; visibility: hidden;">
+        <ui:VisualElement name="SettingsPanel" style="background-color: rgb(75, 75, 75); height: auto; width: 40%; border-left-width: 6px; border-right-width: 6px; border-top-width: 6px; border-bottom-width: 6px; border-top-left-radius: 6px; border-bottom-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; margin-bottom: 0; padding-left: 5px; padding-right: 5px; padding-top: 2px; padding-bottom: 5px; justify-content: flex-start; max-height: 60%;">
             <ui:VisualElement name="Label" style="width: 100%; flex-direction: row; align-items: center; justify-content: space-between; border-bottom-color: rgba(209, 209, 209, 0.43); border-bottom-width: 1px; padding-bottom: 5px;">
                 <ui:Label text="Settings" display-tooltip-when-elided="true" name="SettingPanelTitle" style="font-size: 16px; -unity-font-style: bold;" />
-                <ui:Button text="Save and Close" display-tooltip-when-elided="true" name="SaveAndCloseButton" />
+                <ui:Button text="Save and Close" display-tooltip-when-elided="true" name="SettingsSaveAndCloseButton" />
             </ui:VisualElement>
             <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" style="flex-wrap: nowrap; align-items: stretch; justify-content: flex-start;">
                 <ui:Foldout text="OpenAI API" name="OpenAIApiSettings">
-                    <ui:TextField picking-mode="Ignore" label="API Key" value="filler text" text="API Key" tooltip="ElevenLabs API Key" password="true" style="padding-top: 5px;" />
-                    <ui:DropdownField label="Model" index="-1" choices="GPT3.5Turbo, GPT4, GPT3-Davinci" />
-                    <ui:TextField picking-mode="Ignore" label="Initial Prompt" value="filler text" text="I want you to act like {character} from {series}. I want you to respond and answer like {character} using the tone, manner and vocabulary {character} would use. Do not write any explanations. Only answer like {character}. You must know all of the knowledge of {character}. My first sentence is &quot;Hi {character}.&quot;" tooltip="Voice ID" password="false" multiline="true" style="padding-top: 5px; white-space: normal;" />
-                    <ui:DropdownField label="API Type" index="-1" choices="Official, Non-Official" />
+                    <ui:TextField picking-mode="Ignore" label="API Key" value="filler text" text="API Key" tooltip="ElevenLabs API Key" password="true" name="OpenAIApiKey" style="padding-top: 5px;" />
+                    <ui:DropdownField label="Model" index="-1" choices="GPT3.5Turbo, GPT4, GPT3-Davinci" name="OpenAIModelDropdown" />
+                    <ui:TextField picking-mode="Ignore" label="Initial Prompt" value="filler text" text="I want you to act like {character} from {series}. I want you to respond and answer like {character} using the tone, manner and vocabulary {character} would use. Do not write any explanations. Only answer like {character}. You must know all of the knowledge of {character}. My first sentence is &quot;Hi {character}.&quot;" tooltip="Voice ID" password="false" multiline="true" name="OpenAIInitialPrompt" style="padding-top: 5px; white-space: normal;" />
+                    <ui:DropdownField label="API Type" index="-1" choices="Official, Non-Official" name="OpenAIApiType" />
                 </ui:Foldout>
                 <ui:Foldout text="ElevenLabs API" style="-unity-font-style: normal; margin-bottom: 10px;">
-                    <ui:TextField picking-mode="Ignore" label="Voice ID" value="filler text" text="Voice ID" tooltip="Voice ID" password="false" style="padding-top: 5px;" />
-                    <ui:Slider picking-mode="Ignore" label="Stability" value="42" high-value="100" text="Voice ID" />
-                    <ui:Slider picking-mode="Ignore" label="Similarity Enchance" value="42" high-value="100" text="Voice ID" />
-                    <ui:TextField picking-mode="Ignore" label="API Key" value="filler text" text="API Key" tooltip="ElevenLabs API Key" password="true" style="padding-top: 5px;" />
+                    <ui:TextField picking-mode="Ignore" label="API Key" value="filler text" text="API Key" tooltip="ElevenLabs API Key" password="true" name="ElevenLabsAPIKey" style="padding-top: 5px;" />
+                    <ui:TextField picking-mode="Ignore" label="Voice ID" value="filler text" text="Voice ID" tooltip="Voice ID" password="false" name="ElevenLabsVoiceID" style="padding-top: 5px;" />
+                    <ui:Slider picking-mode="Ignore" label="Stability" value="42" high-value="100" text="Voice ID" name="ElevenLabsStabilitySlider" />
+                    <ui:Slider picking-mode="Ignore" label="Similarity Enchance" value="42" high-value="100" text="Voice ID" name="ElevenLabsSimilaritySlider" />
                 </ui:Foldout>
             </ui:ScrollView>
         </ui:VisualElement>

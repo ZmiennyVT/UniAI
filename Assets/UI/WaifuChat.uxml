@@ -26,9 +26,9 @@
             <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" style="flex-wrap: nowrap; align-items: stretch; justify-content: flex-start;">
                 <ui:Foldout text="OpenAI API" name="OpenAIApiSettings">
                     <ui:TextField picking-mode="Ignore" label="API Key" value="filler text" text="API Key" tooltip="ElevenLabs API Key" password="true" name="OpenAIApiKey" style="padding-top: 5px;" />
-                    <ui:DropdownField label="Model" index="-1" choices="GPT3.5Turbo, GPT4, GPT3-Davinci" name="OpenAIModelDropdown" />
+                    <ui:DropdownField label="Model" index="-1" choices="GPT3.5Turbo, GPT4, GPT3-Davinci" name="OpenAIModelDropdown" style="visibility: hidden; display: none;" />
                     <ui:TextField picking-mode="Ignore" label="Initial Prompt" value="filler text" text="I want you to act like {character} from {series}. I want you to respond and answer like {character} using the tone, manner and vocabulary {character} would use. Do not write any explanations. Only answer like {character}. You must know all of the knowledge of {character}. My first sentence is &quot;Hi {character}.&quot;" tooltip="Voice ID" password="false" multiline="true" name="OpenAIInitialPrompt" style="padding-top: 5px; white-space: normal;" />
-                    <ui:DropdownField label="API Type" index="-1" choices="Official, Non-Official" name="OpenAIApiType" />
+                    <ui:DropdownField label="API Type" index="-1" choices="Official, Non-Official" name="OpenAIApiType" style="display: none;" />
                 </ui:Foldout>
                 <ui:Foldout text="ElevenLabs API" style="-unity-font-style: normal; margin-bottom: 10px;">
                     <ui:TextField picking-mode="Ignore" label="API Key" value="filler text" text="API Key" tooltip="ElevenLabs API Key" password="true" name="ElevenLabsAPIKey" style="padding-top: 5px;" />

@@ -50,6 +50,7 @@ public class WaifuChatInterfaceManager : MonoBehaviour
             string llmInpuText = root.Q<TextField>("UserInput").text;
             AppManager.instance.SendLLMRequest(llmInpuText);
             AddMessage(llmInpuText, true);
+            ClearUserInputField();
         };
 
         waifuChatHistory.Clear(); 
@@ -64,6 +65,11 @@ public class WaifuChatInterfaceManager : MonoBehaviour
             if(!APIManager.instance.SaveAPIData()) Debug.LogError("Failed to save API data!");
             AppManager.instance.UpdateAPISettings();
         };
+    }
+
+    public void ClearUserInputField()
+    {
+        root.Q<TextField>("UserInput").value = "";
     }
 
     public void SetSettingsVisibility(bool visible)

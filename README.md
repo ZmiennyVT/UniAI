@@ -1,13 +1,15 @@
 <h1 align="center">
+    <span>UniAI - All-In-One Virtual Assistant</span>
+</h1>
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-    <span>UniAI - All-In-One Virtual Assistant</span>
-</h1>
 
 # Table of Contents
 
 - [What is UniAI?](#what-is-uniai)
+- [How to use it?](#how-to-use-it)
 - [TODO](#todo)
 - [How To Try It Out](#how-to-try-it-out)
 - [The Plan](#the-plan)
@@ -17,6 +19,10 @@
 ## What is UniAI?
 Introducing UniAI: Your All-In-One Virtual Assistant Experience </br>
 It is a virtual assistant project that will serve as a hub connecting LLM, TTS, STT models, and others, along with the power of the Unity engine. Currently, there is an anime girl as a demo, but the goal is to provide as much flexibility as possible. In the end, you can upload any avatar in the VRM format.
+
+## How to use it?
+Currently, in order to use the application, you need API keys for both ElevenLabs and OpenAI - you enter them in the options and can start using the application.
+There are plans to add a local solution that does not rely on paid APIs.
 
 ## TODO
 For MVP:

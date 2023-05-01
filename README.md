@@ -35,3 +35,17 @@ The project does not have any special requirements, so I plan to release it on W
 ## The Plan
 As mentioned earlier, this project is a virtual assistant project that will serve as a hub connecting LLM, TTS, STT models, and others, along with the power of the Unity engine. Currently, there is an anime girl as a demo, but the goal is to provide as much flexibility as possible.
 The long-term goal is to create an easy-to-use platform that supports as many AI models as possible.
+
+## Contributors ✨
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+## Reference
+- https://hub.vroid.com/en/characters/515144657245174640/models/6438391937465666012
+- https://github.com/RageAgainstThePixel/com.openai.unity

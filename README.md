@@ -63,6 +63,12 @@ The long-term goal is to create an easy-to-use platform that supports as many AI
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
+## Contact/Support
+<a href="https://www.buymeacoffee.com/zmiennyVT" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
+
+Contact: zmiennys@gmail.com
+
 ## Reference
 - https://hub.vroid.com/en/characters/515144657245174640/models/6438391937465666012
 - https://github.com/RageAgainstThePixel/com.openai.unity
